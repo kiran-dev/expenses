@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.expense-row {
+    grid-template-columns: 3fr 1fr 2fr 2fr 1fr;
+}

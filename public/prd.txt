@@ -1,0 +1,193 @@
+Smart Expense Tracker - Requirement Document
+
+Objective
+
+Build a Smart Expense Tracker application that allows users to add, view, filter, and manage daily expenses.
+
+---
+
+Feature 1: Add Expense
+
+The user should be able to add a new expense.
+
+Fields
+
+- Expense Name
+- Amount
+- Category
+
+Categories
+
+- Food
+- Travel
+- Shopping
+- Bills
+- Others
+
+Validation
+
+- Expense Name is mandatory
+- Amount should be greater than 0
+- Category must be selected
+
+Expected Behavior
+
+- Clicking "Add Expense" should add the expense to the list.
+- Form should reset after successful addition.
+
+---
+
+Feature 2: Expense Listing
+
+Display all expenses in a list.
+
+Each expense should show:
+
+- Expense Name
+- Amount
+- Category
+- Created Date
+
+Example:
+
+Food - ₹250 - Food - 25/06/2026
+
+Travel to Office - ₹120 - Travel - 25/06/2026
+
+---
+
+Feature 3: Delete Expense
+
+Each expense item should contain a Delete button.
+
+Expected Behavior
+
+- Clicking Delete should remove the expense from the list immediately.
+
+---
+
+Feature 4: Expense Summary
+
+Display summary information at the top.
+
+Summary Fields
+
+- Total Number of Expenses
+- Total Amount Spent
+
+Example:
+
+Total Expenses: 10
+
+Total Amount: ₹5,250
+
+---
+
+Feature 5: Search Expenses
+
+Provide a search box.
+
+Expected Behavior
+
+- User can search by expense name.
+- Search should happen instantly while typing.
+
+Example:
+
+Search: "Food"
+
+Results:
+
+- Food Delivery
+- Food Purchase
+
+---
+
+Feature 6: Filter by Category
+
+Provide category filter dropdown.
+
+Options:
+
+- All
+- Food
+- Travel
+- Shopping
+- Bills
+- Others
+
+Expected Behavior
+
+Only matching expenses should be displayed.
+
+---
+
+Feature 7: Data Persistence
+
+The application should remember expenses after page refresh.
+
+Expected Behavior
+
+- Added expenses should still exist after refresh.
+- Deleted expenses should remain deleted after refresh.
+
+---
+
+Feature 8: Theme Toggle
+
+Provide a Theme Switch button.
+
+Modes:
+
+- Light Mode
+- Dark Mode
+
+Expected Behavior
+
+- Entire application theme should change.
+- Theme preference should remain after refresh.
+
+---
+
+Feature 9: Auto Focus
+
+When the application loads:
+
+Expected Behavior
+
+- Cursor should automatically focus on the Expense Name input field.
+
+---
+
+Technical Requirements
+
+1. Application should be built using React Functional Components.
+2. Reusable components should be created wherever possible.
+3. State should be shared appropriately between components.
+4. Business logic should be reusable and maintainable.
+5. Unnecessary recalculations and re-renders should be minimized.
+
+---
+
+Bonus Features
+
+1. Sort by Amount (Ascending / Descending)
+2. Sort by Date
+3. Edit Existing Expense
+4. Category Wise Expense Breakdown
+5. Monthly Expense Statistics
+
+---
+
+Deliverables
+
+The final application should allow a user to:
+
+- Add expenses
+- Delete expenses
+- Search expenses
+- Filter expenses
+- View expense summary
+- Persist data after refresh
+- Switch themes
+- Manage expenses smoothly with good UI and code structure
