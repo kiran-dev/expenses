@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useCallback } from 'react'
 import './App.css'
 import ExpenseForm from './ExpenseForm'
 import ExpenseList from './ExpenseList';
@@ -114,12 +114,12 @@ function App() {
     fetchData();
   }, [])
 
-  async function addNewExpense(newExpense) {
+  const addNewExpense = useCallback(async (newExpense) => {
     setExpenses([...expenses, newExpense]);
     await db.expenses.insert(newExpense);
-  }
+  })
 
-  async function deleteExpense(deleteID) {
+  const deleteExpense = useCallback(async (deleteID) => {
     let otherExpenses = [];
     for (const expense of expenses) {
       if (expense.id === deleteID) continue;
@@ -135,9 +135,9 @@ function App() {
     }).exec();
     const deleteDocument = foundDocuments[0];
     await deleteDocument.remove();
-  }
+  })
 
-  async function toggleTheme() {
+  const toggleTheme = useCallback(async () => {
     let newTheme;
     if (theme === "light") newTheme = "dark";
     else newTheme = "light";
@@ -145,7 +145,7 @@ function App() {
     const foundDocuments = await db.theme.find({selector: {}}).exec();
     const firstDocument = foundDocuments[0];
     await firstDocument.patch({ mode: newTheme });
-  }
+  })
 
   return (
     <div className={`w-full h-[100vh] overflow-y-scroll grid grid-flow-row items-start content-start justify-center ${ theme === "light" ? "bg-white" : "bg-black" }`}>
