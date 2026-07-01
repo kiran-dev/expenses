@@ -41,8 +41,8 @@ export default function ExpenseList(props) {
         {
           displayExpenses.map((e) => (
             <div key={e.id} className='expense-row grid grid-flow-col w-full border-2 border-gray-400 text-inherit border-inherit'>
-              <span>{e.name}</span>
-              <span>{e.amount}</span>
+              <span className='max-w-40'>{e.name}</span>
+              <span className='max-w-10'>{e.amount}</span>
               <span>{e.category}</span>
               <span>{UKFormatter.format(new Date(e.createdAt))}</span>
               <span className='cursor-pointer' onClick={() => props.deleteExpense(e.id)}>Delete</span>
